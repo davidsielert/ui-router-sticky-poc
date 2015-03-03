@@ -1,6 +1,7 @@
 <h4>Events</h4>
 <section>
     <article ng-repeat="event in events">
+        <h4><a id="{{event._id}}" href="#">{{event.event_name}}</a></h4>
         <ul class="list-unstyled">
             <li>Location: {{event.location}}</li>
         </ul>

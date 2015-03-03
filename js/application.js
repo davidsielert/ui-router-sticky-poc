@@ -1,4 +1,5 @@
-angular.module('hapzis',['ngResource','ui.router','ct.ui.router.extras']);
+angular.module('hapzis',['ngResource','ui.router',
+    'ct.ui.router.extras.sticky', 'ct.ui.router.extras.dsr', 'ct.ui.router.extras.statevis']);
 angular.module('hapzis').run(function ($rootScope, $state, $window, $timeout) {
     $rootScope.$state = $state;
 });
@@ -8,6 +9,7 @@ angular.module('hapzis').config(function ($stateProvider,$urlRouterProvider,$sti
     $stateProvider
         .state('home',
         {
+            url:"/",
             views: {
                 "body":{
                     templateUrl:'templates/home.html'
@@ -15,7 +17,7 @@ angular.module('hapzis').config(function ($stateProvider,$urlRouterProvider,$sti
             }
         })
         .state('home.events', {
-            url:"",
+            url:"events",
             deepStateRedirect: true,
             sticky: true,
             views: {
@@ -28,14 +30,14 @@ angular.module('hapzis').config(function ($stateProvider,$urlRouterProvider,$sti
         .state('about',
         {
 
-            url: '/about',
+            url: 'about',
             views: {
                 "body": {
                     templateUrl: 'templates/about.html'
                 }
             }
         });
-   // $urlRouterProvider.otherwise("/");
+   $urlRouterProvider.otherwise("/");
 
 });
 
