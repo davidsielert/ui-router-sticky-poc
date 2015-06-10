@@ -10,8 +10,9 @@ angular.module('hapzis').config(function ($stateProvider,$urlRouterProvider,$sti
         .state('home',
         {
             url:"/",
+	    sticky: true,
             views: {
-                "body":{
+                "stuck":{
                     templateUrl:'templates/home.html'
                 }
             }
