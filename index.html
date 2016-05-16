@@ -18,6 +18,7 @@
     <script type="text/javascript" src="js/application.js"></script>
 </head>
 <body >
+<div ng-show="$state.includes('home')" ui-view="stuck"></div>
 <div ui-view="body"></div>
 </body>
 </html>
